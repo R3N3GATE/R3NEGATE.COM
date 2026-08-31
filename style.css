@@ -325,7 +325,7 @@ nav a:hover::after {
 
     /*
        2 produtos por linha
-       20 produtos = 10 filas
+       10 produtos = 5 filas
     */
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
