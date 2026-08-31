@@ -7,6 +7,10 @@
     <title>R3N3GATE | WE HAVE ALL YOU WANT</title>
 
     <style>
+        /* ==============================
+           CONFIGURAÇÕES GERAIS
+        ============================== */
+
         * {
             margin: 0;
             padding: 0;
@@ -15,206 +19,309 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #0a0a0a;
-            color: white;
+            background: #080808;
+            color: #ffffff;
         }
 
-        /* HEADER */
+        /* ==============================
+           CABEÇALHO
+        ============================== */
+
         header {
             background: #050505;
-            border-bottom: 1px solid #333;
-            padding: 25px 6%;
+            border-bottom: 1px solid #292929;
+
+            padding: 22px 6%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .logo {
             font-size: 30px;
             font-weight: 900;
             letter-spacing: 5px;
-            color: #fff;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             margin-left: 25px;
+
             font-size: 14px;
+            font-weight: bold;
             text-transform: uppercase;
+
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #999;
+            color: #888;
         }
 
-        /* HERO */
+        /* ==============================
+           PRIMEIRA ÁREA / HERO
+        ============================== */
+
         .hero {
-            min-height: 420px;
+            min-height: 520px;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
             text-align: center;
-            padding: 60px 20px;
+
+            padding: 80px 25px;
+
             background:
-                radial-gradient(circle at center, #252525 0%, #0a0a0a 55%);
+                radial-gradient(
+                    circle at center,
+                    #292929 0%,
+                    #111111 40%,
+                    #080808 75%
+                );
         }
 
         .hero h1 {
-            font-size: clamp(40px, 8vw, 90px);
+            font-size: clamp(40px, 7vw, 85px);
             font-weight: 900;
+
             letter-spacing: 4px;
-            margin-bottom: 20px;
+            line-height: 1.05;
+
+            max-width: 1100px;
         }
 
         .hero p {
-            color: #aaa;
+            color: #999;
+
             font-size: 17px;
-            max-width: 600px;
+            line-height: 1.6;
+
+            max-width: 650px;
+
+            margin-top: 25px;
         }
 
         .hero-button {
-            margin-top: 30px;
-            padding: 15px 35px;
+            display: inline-block;
+
+            margin-top: 35px;
+            padding: 16px 38px;
+
             background: white;
             color: black;
+
             text-decoration: none;
             font-weight: bold;
+
             transition: 0.3s;
         }
 
         .hero-button:hover {
             background: #aaa;
+            transform: translateY(-3px);
         }
 
-        /* PRODUTOS */
+        /* ==============================
+           SECÇÃO DOS PRODUTOS
+        ============================== */
+
         .products-section {
-            padding: 70px 6%;
+            padding: 80px 7%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 45px;
+            margin-bottom: 55px;
         }
 
         .section-title h2 {
-            font-size: 35px;
-            letter-spacing: 3px;
+            font-size: 36px;
+            letter-spacing: 4px;
         }
 
         .section-title p {
-            color: #888;
-            margin-top: 10px;
+            color: #777;
+            margin-top: 12px;
         }
+
+        /* ==============================
+           GRELHA
+           2 PRODUTOS POR LINHA
+        ============================== */
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 25px;
+
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            gap: 45px 35px;
+
+            max-width: 1100px;
+            margin: auto;
         }
 
-        /* CARTÃO DO PRODUTO */
+        /* ==============================
+           PRODUTO
+        ============================== */
+
         .product {
             background: #111;
+
             border: 1px solid #292929;
-            transition: 0.3s;
+
             overflow: hidden;
+
+            transition: 0.35s;
         }
 
         .product:hover {
             transform: translateY(-7px);
             border-color: #777;
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         }
+
+        /* ==============================
+           IMAGEM DO PRODUTO
+        ============================== */
 
         .product-image {
             width: 100%;
-            height: 260px;
-            background: #1c1c1c;
+            height: 330px;
+
+            background: #1b1b1b;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             overflow: hidden;
         }
 
         .product-image img {
             width: 100%;
             height: 100%;
+
             object-fit: cover;
+
+            display: block;
         }
 
         .placeholder {
             color: #666;
+
             text-align: center;
+
             font-size: 14px;
+            letter-spacing: 1px;
+
             padding: 20px;
         }
 
+        /* ==============================
+           INFORMAÇÕES
+        ============================== */
+
         .product-info {
-            padding: 20px;
+            padding: 25px;
         }
 
         .product-name {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
-            margin-bottom: 8px;
+
+            margin-bottom: 10px;
         }
 
         .product-description {
             color: #888;
-            font-size: 13px;
-            min-height: 38px;
+
+            font-size: 14px;
+            line-height: 1.5;
+
+            min-height: 42px;
         }
 
         .price {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
-            margin: 15px 0;
+
+            margin: 20px 0;
         }
+
+        /* ==============================
+           BOTÃO COMPRAR
+        ============================== */
 
         .buy-button {
             width: 100%;
-            padding: 12px;
+
+            padding: 14px;
+
             background: white;
             color: black;
+
             border: none;
+
             cursor: pointer;
+
             font-weight: bold;
+            font-size: 14px;
+
             text-transform: uppercase;
+
+            transition: 0.3s;
         }
 
         .buy-button:hover {
-            background: #ccc;
+            background: #cccccc;
         }
 
-        /* ÁREA PARA CARREGAR FOTOS */
+        /* ==============================
+           ÁREA DE UPLOAD
+        ============================== */
+
         .upload-section {
-            background: #111;
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-            padding: 70px 6%;
+            padding: 80px 7%;
+
+            background: #101010;
+
+            border-top: 1px solid #292929;
+            border-bottom: 1px solid #292929;
+
             text-align: center;
         }
 
         .upload-section h2 {
-            font-size: 30px;
-            margin-bottom: 15px;
+            font-size: 32px;
+            letter-spacing: 3px;
         }
 
         .upload-section p {
             color: #888;
-            margin-bottom: 30px;
+
+            margin-top: 12px;
+            margin-bottom: 35px;
         }
 
         .upload-box {
-            max-width: 600px;
+            max-width: 650px;
+
             margin: auto;
+
+            padding: 55px 25px;
+
             border: 2px dashed #555;
-            padding: 50px 20px;
-            cursor: pointer;
+
             transition: 0.3s;
         }
 
@@ -223,30 +330,42 @@
         }
 
         .upload-box input {
-            margin-top: 20px;
+            margin-top: 22px;
             color: white;
         }
 
         #preview {
-            margin-top: 30px;
             display: flex;
+
             flex-wrap: wrap;
-            gap: 15px;
+
             justify-content: center;
+
+            gap: 15px;
+
+            margin-top: 30px;
         }
 
         #preview img {
             width: 150px;
             height: 150px;
+
             object-fit: cover;
+
             border: 1px solid #555;
         }
 
-        /* FOOTER */
+        /* ==============================
+           FOOTER
+        ============================== */
+
         footer {
-            padding: 40px 20px;
-            text-align: center;
+            padding: 45px 20px;
+
             background: #050505;
+
+            text-align: center;
+
             color: #666;
         }
 
@@ -254,40 +373,177 @@
             color: white;
         }
 
-        /* RESPONSIVO */
-        @media (max-width: 1100px) {
-            .products-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
+        /* ==============================
+           TABLET
+        ============================== */
 
-        @media (max-width: 700px) {
+        @media (max-width: 800px) {
+
             header {
-                flex-direction: column;
-                gap: 15px;
+                padding: 20px 5%;
+            }
+
+            .logo {
+                font-size: 24px;
             }
 
             nav a {
-                margin: 0 8px;
+                margin-left: 12px;
+                font-size: 12px;
+            }
+
+            .products-section {
+                padding: 65px 5%;
             }
 
             .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
+                gap: 30px 20px;
             }
 
             .product-image {
-                height: 200px;
+                height: 280px;
             }
         }
 
-        @media (max-width: 450px) {
-            .products-grid {
-                grid-template-columns: 1fr;
+        /* ==============================
+           TELEMÓVEL
+           CONTINUA COM 2 PRODUTOS
+        ============================== */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 20px 18px;
+
+                flex-direction: column;
+
+                gap: 18px;
+            }
+
+            .logo {
+                font-size: 27px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 11px;
+            }
+
+            /* Primeira área confortável no telemóvel */
+
+            .hero {
+                min-height: 480px;
+
+                padding: 70px 20px;
             }
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 43px;
+
+                letter-spacing: 2px;
+
+                line-height: 1.1;
+            }
+
+            .hero p {
+                font-size: 15px;
+
+                max-width: 450px;
+            }
+
+            .products-section {
+                padding: 65px 16px;
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .section-title h2 {
+                font-size: 27px;
+            }
+
+            /*
+             * IMPORTANTE:
+             * Continuamos com 2 produtos
+             * na mesma linha.
+             */
+
+            .products-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+
+                gap: 22px 12px;
+            }
+
+            .product-image {
+                height: 210px;
+            }
+
+            .product-info {
+                padding: 15px;
+            }
+
+            .product-name {
+                font-size: 15px;
+            }
+
+            .product-description {
+                font-size: 12px;
+            }
+
+            .price {
+                font-size: 17px;
+
+                margin: 14px 0;
+            }
+
+            .buy-button {
+                padding: 11px;
+
+                font-size: 11px;
+            }
+
+            .upload-section {
+                padding: 65px 18px;
+            }
+
+            .upload-section h2 {
+                font-size: 26px;
+            }
+        }
+
+        /* ==============================
+           TELEMÓVEIS MUITO PEQUENOS
+        ============================== */
+
+        @media (max-width: 380px) {
+
+            .products-grid {
+                gap: 18px 8px;
+            }
+
+            .product-image {
+                height: 180px;
+            }
+
+            .product-info {
+                padding: 12px;
+            }
+
+            .product-name {
+                font-size: 14px;
+            }
+
+            .product-description {
+                font-size: 11px;
+            }
+
+            .price {
+                font-size: 16px;
+            }
+
+            .buy-button {
+                font-size: 10px;
             }
         }
     </style>
@@ -295,209 +551,737 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- ==============================
+         CABEÇALHO
+    ============================== -->
+
     <header>
-        <div class="logo">R3N3GATE</div>
+
+        <div class="logo">
+            R3N3GATE
+        </div>
 
         <nav>
             <a href="#home">Home</a>
             <a href="#products">Produtos</a>
             <a href="#upload">Fotos</a>
         </nav>
+
     </header>
 
 
-    <!-- HERO -->
+    <!-- ==============================
+         HERO
+    ============================== -->
+
     <section class="hero" id="home">
-        <h1>WE HAVE ALL YOU WANT</h1>
+
+        <h1>
+            WE HAVE ALL YOU WANT
+        </h1>
 
         <p>
             Bem-vindo à R3N3GATE.
-            Descobre a nossa coleção e encontra aquilo que procuras.
+            Descobre a nossa coleção e encontra
+            aquilo que procuras.
         </p>
 
         <a href="#products" class="hero-button">
             VER PRODUTOS
         </a>
+
     </section>
 
 
-    <!-- PRODUTOS -->
+    <!-- ==============================
+         PRODUTOS
+         20 PRODUTOS
+         2 POR LINHA
+         = 10 FILAS
+    ============================== -->
+
     <section class="products-section" id="products">
 
         <div class="section-title">
-            <h2>OUR PRODUCTS</h2>
-            <p>Escolhe o teu produto favorito.</p>
+
+            <h2>
+                OUR PRODUCTS
+            </h2>
+
+            <p>
+                Escolhe o teu produto favorito.
+            </p>
+
         </div>
+
 
         <div class="products-grid">
 
-            <!-- PRODUTO 1 -->
+
+            <!-- 01 -->
             <div class="product">
+
                 <div class="product-image">
-                    <!-- Coloca aqui a imagem do Produto 1 -->
-                    <div class="placeholder">FOTO DO PRODUTO 1</div>
+                    <div class="placeholder">
+                        FOTO PRODUTO 01
+                    </div>
                 </div>
 
                 <div class="product-info">
-                    <div class="product-name">R3N3GATE T-SHIRT</div>
-                    <div class="product-description">T-shirt premium R3N3GATE.</div>
-                    <div class="price">€25,00</div>
-                    <button class="buy-button">Comprar</button>
+
+                    <div class="product-name">
+                        R3N3GATE T-SHIRT
+                    </div>
+
+                    <div class="product-description">
+                        T-shirt premium R3N3GATE.
+                    </div>
+
+                    <div class="price">
+                        €25,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
                 </div>
+
             </div>
 
 
-            <!-- PRODUTO 2 -->
+            <!-- 02 -->
             <div class="product">
+
                 <div class="product-image">
-                    <div class="placeholder">FOTO DO PRODUTO 2</div>
+                    <div class="placeholder">
+                        FOTO PRODUTO 02
+                    </div>
                 </div>
 
                 <div class="product-info">
-                    <div class="product-name">BLACK HOODIE</div>
-                    <div class="product-description">Hoodie preto com design exclusivo.</div>
-                    <div class="price">€55,00</div>
-                    <button class="buy-button">Comprar</button>
+
+                    <div class="product-name">
+                        BLACK HOODIE
+                    </div>
+
+                    <div class="product-description">
+                        Hoodie preto exclusivo.
+                    </div>
+
+                    <div class="price">
+                        €55,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
                 </div>
+
             </div>
 
 
-            <!-- PRODUTO 3 -->
+            <!-- 03 -->
             <div class="product">
+
                 <div class="product-image">
-                    <div class="placeholder">FOTO DO PRODUTO 3</div>
+                    <div class="placeholder">
+                        FOTO PRODUTO 03
+                    </div>
                 </div>
 
                 <div class="product-info">
-                    <div class="product-name">R3N3GATE CAP</div>
-                    <div class="product-description">Boné clássico R3N3GATE.</div>
-                    <div class="price">€20,00</div>
-                    <button class="buy-button">Comprar</button>
+
+                    <div class="product-name">
+                        R3N3GATE CAP
+                    </div>
+
+                    <div class="product-description">
+                        Boné clássico R3N3GATE.
+                    </div>
+
+                    <div class="price">
+                        €20,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
                 </div>
+
             </div>
 
 
-            <!-- PRODUTO 4 -->
+            <!-- 04 -->
             <div class="product">
+
                 <div class="product-image">
-                    <div class="placeholder">FOTO DO PRODUTO 4</div>
+                    <div class="placeholder">
+                        FOTO PRODUTO 04
+                    </div>
                 </div>
 
                 <div class="product-info">
-                    <div class="product-name">PREMIUM JACKET</div>
-                    <div class="product-description">Casaco premium para todos os estilos.</div>
-                    <div class="price">€85,00</div>
-                    <button class="buy-button">Comprar</button>
+
+                    <div class="product-name">
+                        PREMIUM JACKET
+                    </div>
+
+                    <div class="product-description">
+                        Casaco premium moderno.
+                    </div>
+
+                    <div class="price">
+                        €85,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
                 </div>
+
             </div>
 
 
-            <!-- PRODUTO 5 -->
+            <!-- 05 -->
             <div class="product">
+
                 <div class="product-image">
-                    <div class="placeholder">FOTO DO PRODUTO 5</div>
+                    <div class="placeholder">
+                        FOTO PRODUTO 05
+                    </div>
                 </div>
 
                 <div class="product-info">
-                    <div class="product-name">R3N3GATE PANTS</div>
-                    <div class="product-description">Calças confortáveis e modernas.</div>
-                    <div class="price">€60,00</div>
-                    <button class="buy-button">Comprar</button>
+
+                    <div class="product-name">
+                        R3N3GATE PANTS
+                    </div>
+
+                    <div class="product-description">
+                        Calças urbanas confortáveis.
+                    </div>
+
+                    <div class="price">
+                        €60,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
                 </div>
+
             </div>
 
 
-            <!-- PRODUTO 6 -->
+            <!-- 06 -->
             <div class="product">
+
                 <div class="product-image">
-                    <div class="placeholder">FOTO DO PRODUTO 6</div>
+                    <div class="placeholder">
+                        FOTO PRODUTO 06
+                    </div>
                 </div>
 
                 <div class="product-info">
-                    <div class="product-name">SNEAKERS X</div>
-                    <div class="product-description">Sneakers com design urbano.</div>
-                    <div class="price">€110,00</div>
-                    <button class="buy-button">Comprar</button>
+
+                    <div class="product-name">
+                        SNEAKERS X
+                    </div>
+
+                    <div class="product-description">
+                        Sneakers de estilo urbano.
+                    </div>
+
+                    <div class="price">
+                        €110,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
                 </div>
+
             </div>
 
 
-            <!-- PRODUTO 7 -->
+            <!-- 07 -->
             <div class="product">
+
                 <div class="product-image">
-                    <div class="placeholder">FOTO DO PRODUTO 7</div>
+                    <div class="placeholder">
+                        FOTO PRODUTO 07
+                    </div>
                 </div>
 
                 <div class="product-info">
-                    <div class="product-name">R3N3GATE BAG</div>
-                    <div class="product-description">Mala urbana para o dia a dia.</div>
-                    <div class="price">€45,00</div>
-                    <button class="buy-button">Comprar</button>
+
+                    <div class="product-name">
+                        R3N3GATE BAG
+                    </div>
+
+                    <div class="product-description">
+                        Mala urbana para o dia a dia.
+                    </div>
+
+                    <div class="price">
+                        €45,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
                 </div>
+
             </div>
 
 
-            <!-- PRODUTO 8 -->
+            <!-- 08 -->
             <div class="product">
+
                 <div class="product-image">
-                    <div class="placeholder">FOTO DO PRODUTO 8</div>
+                    <div class="placeholder">
+                        FOTO PRODUTO 08
+                    </div>
                 </div>
 
                 <div class="product-info">
-                    <div class="product-name">URBAN WATCH</div>
-                    <div class="product-description">Relógio de estilo minimalista.</div>
-                    <div class="price">€75,00</div>
-                    <button class="buy-button">Comprar</button>
+
+                    <div class="product-name">
+                        URBAN WATCH
+                    </div>
+
+                    <div class="product-description">
+                        Relógio de estilo minimalista.
+                    </div>
+
+                    <div class="price">
+                        €75,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
                 </div>
+
             </div>
 
 
-            <!-- PRODUTO 9 -->
+            <!-- 09 -->
             <div class="product">
+
                 <div class="product-image">
-                    <div class="placeholder">FOTO DO PRODUTO 9</div>
+                    <div class="placeholder">
+                        FOTO PRODUTO 09
+                    </div>
                 </div>
 
                 <div class="product-info">
-                    <div class="product-name">R3N3GATE GLASSES</div>
-                    <div class="product-description">Óculos com design moderno.</div>
-                    <div class="price">€35,00</div>
-                    <button class="buy-button">Comprar</button>
+
+                    <div class="product-name">
+                        R3N3GATE GLASSES
+                    </div>
+
+                    <div class="product-description">
+                        Óculos de design moderno.
+                    </div>
+
+                    <div class="price">
+                        €35,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
                 </div>
+
             </div>
 
 
-            <!-- PRODUTO 10 -->
+            <!-- 10 -->
             <div class="product">
+
                 <div class="product-image">
-                    <div class="placeholder">FOTO DO PRODUTO 10</div>
+                    <div class="placeholder">
+                        FOTO PRODUTO 10
+                    </div>
                 </div>
 
                 <div class="product-info">
-                    <div class="product-name">LIMITED EDITION</div>
-                    <div class="product-description">Edição limitada R3N3GATE.</div>
-                    <div class="price">€150,00</div>
-                    <button class="buy-button">Comprar</button>
+
+                    <div class="product-name">
+                        LIMITED EDITION
+                    </div>
+
+                    <div class="product-description">
+                        Edição limitada R3N3GATE.
+                    </div>
+
+                    <div class="price">
+                        €150,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
                 </div>
+
             </div>
+
+
+            <!-- 11 -->
+            <div class="product">
+
+                <div class="product-image">
+                    <div class="placeholder">
+                        FOTO PRODUTO 11
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        R3N3GATE SWEATER
+                    </div>
+
+                    <div class="product-description">
+                        Sweatshirt confortável.
+                    </div>
+
+                    <div class="price">
+                        €50,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- 12 -->
+            <div class="product">
+
+                <div class="product-image">
+                    <div class="placeholder">
+                        FOTO PRODUTO 12
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        DENIM JACKET
+                    </div>
+
+                    <div class="product-description">
+                        Casaco denim moderno.
+                    </div>
+
+                    <div class="price">
+                        €95,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- 13 -->
+            <div class="product">
+
+                <div class="product-image">
+                    <div class="placeholder">
+                        FOTO PRODUTO 13
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        STREET SHORTS
+                    </div>
+
+                    <div class="product-description">
+                        Calções para estilo urbano.
+                    </div>
+
+                    <div class="price">
+                        €40,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- 14 -->
+            <div class="product">
+
+                <div class="product-image">
+                    <div class="placeholder">
+                        FOTO PRODUTO 14
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        URBAN BACKPACK
+                    </div>
+
+                    <div class="product-description">
+                        Mochila resistente e elegante.
+                    </div>
+
+                    <div class="price">
+                        €70,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- 15 -->
+            <div class="product">
+
+                <div class="product-image">
+                    <div class="placeholder">
+                        FOTO PRODUTO 15
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        R3N3GATE SOCKS
+                    </div>
+
+                    <div class="product-description">
+                        Meias com design R3N3GATE.
+                    </div>
+
+                    <div class="price">
+                        €15,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- 16 -->
+            <div class="product">
+
+                <div class="product-image">
+                    <div class="placeholder">
+                        FOTO PRODUTO 16
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        SPORT HOODIE
+                    </div>
+
+                    <div class="product-description">
+                        Hoodie para um look desportivo.
+                    </div>
+
+                    <div class="price">
+                        €65,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- 17 -->
+            <div class="product">
+
+                <div class="product-image">
+                    <div class="placeholder">
+                        FOTO PRODUTO 17
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        PREMIUM BELT
+                    </div>
+
+                    <div class="product-description">
+                        Cinto premium R3N3GATE.
+                    </div>
+
+                    <div class="price">
+                        €30,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- 18 -->
+            <div class="product">
+
+                <div class="product-image">
+                    <div class="placeholder">
+                        FOTO PRODUTO 18
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        NIGHT SHIRT
+                    </div>
+
+                    <div class="product-description">
+                        T-shirt especial para a noite.
+                    </div>
+
+                    <div class="price">
+                        €32,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- 19 -->
+            <div class="product">
+
+                <div class="product-image">
+                    <div class="placeholder">
+                        FOTO PRODUTO 19
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        R3N3GATE TRACKSUIT
+                    </div>
+
+                    <div class="product-description">
+                        Conjunto desportivo completo.
+                    </div>
+
+                    <div class="price">
+                        €120,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- 20 -->
+            <div class="product">
+
+                <div class="product-image">
+                    <div class="placeholder">
+                        FOTO PRODUTO 20
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        R3N3GATE PREMIUM
+                    </div>
+
+                    <div class="product-description">
+                        Produto exclusivo da coleção premium.
+                    </div>
+
+                    <div class="price">
+                        €200,00
+                    </div>
+
+                    <button class="buy-button">
+                        Comprar
+                    </button>
+
+                </div>
+
+            </div>
+
 
         </div>
+
     </section>
 
 
-    <!-- UPLOAD DE FOTOS -->
+    <!-- ==============================
+         UPLOAD DE FOTOS
+    ============================== -->
+
     <section class="upload-section" id="upload">
 
-        <h2>ADICIONAR FOTOS</h2>
+        <h2>
+            ADICIONAR FOTOS
+        </h2>
 
         <p>
-            Carrega as fotos dos teus produtos para veres uma pré-visualização.
+            Carrega as fotos dos teus produtos.
         </p>
 
         <div class="upload-box">
 
-            <strong>ESCOLHE AS FOTOS DOS PRODUTOS</strong>
+            <strong>
+                ESCOLHE AS FOTOS DOS PRODUTOS
+            </strong>
 
             <br>
 
@@ -515,19 +1299,33 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
     <footer>
+
         <p>
-            © 2026 <strong>R3N3GATE</strong> — WE HAVE ALL YOU WANT
+            © 2026
+            <strong>R3N3GATE</strong>
+            — WE HAVE ALL YOU WANT
         </p>
+
     </footer>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- ==============================
+         JAVASCRIPT PARA FOTOS
+    ============================== -->
+
     <script>
 
-        const photoInput = document.getElementById("productPhotos");
-        const preview = document.getElementById("preview");
+        const photoInput =
+            document.getElementById("productPhotos");
+
+        const preview =
+            document.getElementById("preview");
+
 
         photoInput.addEventListener("change", function () {
 
@@ -535,31 +1333,41 @@
 
             const files = this.files;
 
+
             for (let i = 0; i < files.length; i++) {
 
                 const file = files[i];
+
 
                 if (!file.type.startsWith("image/")) {
                     continue;
                 }
 
-                const reader = new FileReader();
+
+                const reader =
+                    new FileReader();
+
 
                 reader.onload = function (event) {
 
-                    const img = document.createElement("img");
+                    const img =
+                        document.createElement("img");
 
-                    img.src = event.target.result;
+                    img.src =
+                        event.target.result;
 
                     preview.appendChild(img);
+
                 };
 
+
                 reader.readAsDataURL(file);
+
             }
+
         });
 
     </script>
 
 </body>
-  </html>
-
+</html>
