@@ -1,120 +1,992 @@
-/* Configuração Base */
+/* =========================================================
+   R3N3GATE
+   CSS PURO — DESIGN MODERNO / MASCULINO / PREMIUM
+   ========================================================= */
+
+
+/* =========================================================
+   1. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 body {
-font-family: sans-serif;
-background-color: #f4f4f6;
-margin: 0;
-padding: 15px;
-color: #333;
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #080808;
+    color: #ffffff;
+
+    overflow-x: hidden;
 }
 
-/* Contentor Principal */
-.store-container {
-max-width: 600px;
-margin: 0 auto;
+
+/* =========================================================
+   2. VARIÁVEIS
+   ========================================================= */
+
+:root {
+    --black: #080808;
+    --dark: #101010;
+    --card: #151515;
+    --border: #292929;
+
+    --white: #ffffff;
+    --gray: #999999;
+    --dark-gray: #555555;
+
+    --transition: 0.3s ease;
 }
 
-/* Topo da Loja */
-.store-brand {
-text-align: center;
-margin-bottom: 25px;
+
+/* =========================================================
+   3. HEADER
+   ========================================================= */
+
+header {
+    width: 100%;
+
+    min-height: 75px;
+
+    padding: 18px 6%;
+
+    background: rgba(5, 5, 5, 0.95);
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(10px);
 }
 
-.store-brand h1 {
-margin: 0;
-font-size: 1.8rem;
-color: #111;
+
+/* =========================================================
+   4. LOGO
+   ========================================================= */
+
+.logo {
+    color: var(--white);
+
+    font-size: 32px;
+    font-weight: 900;
+
+    letter-spacing: 6px;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition: var(--transition);
 }
 
-/* Grelha de Produtos (2 por linha no telemóvel) */
+.logo:hover {
+    color: #bdbdbd;
+
+    letter-spacing: 8px;
+}
+
+
+/* =========================================================
+   5. MENU
+   ========================================================= */
+
+nav {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+nav a {
+    position: relative;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: #999999;
+}
+
+
+/* Linha por baixo do menu */
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #ffffff;
+
+    transition: var(--transition);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   6. HERO
+   ========================================================= */
+
+.hero {
+    width: 100%;
+
+    min-height: 520px;
+
+    padding: 90px 6%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #303030 0%,
+            #171717 35%,
+            #080808 75%
+        );
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   7. TÍTULO PRINCIPAL
+   ========================================================= */
+
+.hero h1 {
+    width: 100%;
+    max-width: 1100px;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 7vw, 90px);
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   8. TEXTO HERO
+   ========================================================= */
+
+.hero p {
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    color: var(--gray);
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   9. BOTÃO PRINCIPAL
+   ========================================================= */
+
+.hero-button {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    min-height: 50px;
+
+    margin-top: 35px;
+
+    padding: 0 35px;
+
+    background: #ffffff;
+
+    color: #000000;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition: var(--transition);
+}
+
+.hero-button:hover {
+    background: #bdbdbd;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   10. SECÇÃO DOS PRODUTOS
+   ========================================================= */
+
+.products-section {
+    width: 100%;
+
+    padding: 85px 6%;
+
+    background: var(--black);
+}
+
+
+/* =========================================================
+   11. TÍTULO DA SECÇÃO
+   ========================================================= */
+
+.section-title {
+    margin-bottom: 55px;
+
+    text-align: center;
+}
+
+.section-title h2 {
+    color: #ffffff;
+
+    font-size: 36px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.section-title p {
+    margin-top: 12px;
+
+    color: #777777;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   12. GRID DOS PRODUTOS
+   ========================================================= */
+
 .products-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 15px;
-margin-bottom: 30px;
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    /*
+       2 produtos por linha
+       20 produtos = 10 filas
+    */
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 35px;
+    row-gap: 45px;
 }
 
-/* Cartão do Produto */
-.product-card {
-background: #fff;
-border-radius: 8px;
-overflow: hidden;
-box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-display: flex;
-flex-direction: column;
+
+/* =========================================================
+   13. CARD DO PRODUTO
+   ========================================================= */
+
+.product {
+    min-width: 0;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
-.product-img {
-width: 100%;
-height: 120px;
-object-fit: cover;
+
+/* Efeito ao passar o rato */
+
+.product:hover {
+    transform: translateY(-7px);
+
+    border-color: #666666;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.5);
 }
+
+
+/* =========================================================
+   14. IMAGEM DO PRODUTO
+   ========================================================= */
+
+.product-image {
+    width: 100%;
+
+    height: 330px;
+
+    background: #1c1c1c;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+
+/* Zoom suave na imagem */
+
+.product:hover .product-image img {
+    transform: scale(1.04);
+}
+
+
+/* Texto quando ainda não existe imagem */
+
+.placeholder {
+    color: #555555;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   15. INFORMAÇÕES DO PRODUTO
+   ========================================================= */
 
 .product-info {
-padding: 10px;
-display: flex;
-flex-direction: column;
-flex-grow: 1;
-justify-content: space-between;
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
 }
 
-.product-title {
-font-size: 0.95rem;
-margin: 0 0 5px 0;
+
+/* =========================================================
+   16. NOME DO PRODUTO
+   ========================================================= */
+
+.product-name {
+    color: #ffffff;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 9px;
 }
 
-.product-price {
-font-weight: bold;
-color: #e44d26;
-margin: 0 0 10px 0;
+
+/* =========================================================
+   17. DESCRIÇÃO
+   ========================================================= */
+
+.product-description {
+    min-height: 42px;
+
+    color: #888888;
+
+    font-size: 13px;
+
+    line-height: 1.5;
 }
 
-/* Botão de Comprar */
-.buy-btn {
-background-color: #222;
-color: #fff;
-border: none;
-padding: 8px;
-border-radius: 4px;
-font-size: 0.85rem;
-cursor: pointer;
-width: 100%;
+
+/* =========================================================
+   18. PREÇO
+   ========================================================= */
+
+.price {
+    margin: 20px 0;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 900;
 }
 
-.buy-btn:active {
-background-color: #555;
+
+/* =========================================================
+   19. BOTÃO COMPRAR
+   ========================================================= */
+
+.buy-button {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 12px;
+
+    background: #ffffff;
+
+    color: #000000;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    transition: var(--transition);
 }
 
-/* Secção do Carrinho */
-.cart-section {
-background: #fff;
-padding: 15px;
-border-radius: 8px;
-box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+.buy-button:hover {
+    background: #bdbdbd;
+
+    transform: translateY(-2px);
 }
 
-.cart-section h3 {
-margin-top: 0;
-border-bottom: 1px solid #eee;
-padding-bottom: 8px;
+.buy-button:active {
+    transform: scale(0.98);
 }
 
-#cart-items {
-list-style: none;
-padding: 0;
-margin: 10px 0;
-font-size: 0.9rem;
+
+/* =========================================================
+   20. ÁREA DE UPLOAD
+   ========================================================= */
+
+.upload-section {
+    width: 100%;
+
+    padding: 85px 6%;
+
+    background: #101010;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    text-align: center;
 }
 
-#cart-items li {
-margin-bottom: 5px;
-color: #555;
+.upload-section h2 {
+    color: #ffffff;
+
+    font-size: 32px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
 }
 
-.cart-total {
-font-weight: bold;
-text-align: right;
-border-top: 1px solid #eee;
-padding-top: 10px;
-margin-bottom: 0;
+.upload-section p {
+    margin-top: 12px;
+    margin-bottom: 35px;
+
+    color: #777777;
 }
 
+
+/* =========================================================
+   21. CAIXA DE UPLOAD
+   ========================================================= */
+
+.upload-box {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding: 55px 25px;
+
+    border: 2px dashed #444444;
+
+    background: #0b0b0b;
+
+    transition: var(--transition);
+}
+
+.upload-box:hover {
+    border-color: #ffffff;
+
+    background: #111111;
+}
+
+.upload-box strong {
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   22. INPUT DE FOTOS
+   ========================================================= */
+
+.upload-box input {
+    max-width: 100%;
+
+    margin-top: 22px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   23. PREVIEW DAS FOTOS
+   ========================================================= */
+
+#preview {
+    width: 100%;
+
+    margin-top: 30px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+#preview img {
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border: 1px solid #444444;
+}
+
+
+/* =========================================================
+   24. FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    padding: 45px 20px;
+
+    background: #050505;
+
+    color: #666666;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+footer strong {
+    color: #ffffff;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   25. TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 18px 5%;
+    }
+
+    .logo {
+        font-size: 27px;
+        letter-spacing: 4px;
+    }
+
+    nav {
+        gap: 16px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .products-section {
+        padding: 70px 5%;
+    }
+
+    .products-grid {
+        column-gap: 20px;
+        row-gap: 30px;
+    }
+
+    .product-image {
+        height: 280px;
+    }
+
+    .product-info {
+        padding: 20px;
+    }
+}
+
+
+/* =========================================================
+   26. TELEMÓVEL
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* HEADER */
+
+    header {
+        min-height: 90px;
+
+        padding: 18px 16px;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+
+    /* LOGO */
+
+    .logo {
+        font-size: 27px;
+
+        letter-spacing: 5px;
+    }
+
+
+    /* MENU */
+
+    nav {
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 10px;
+
+        letter-spacing: 0.5px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 470px;
+
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+
+        letter-spacing: 2px;
+
+        line-height: 1.08;
+    }
+
+    .hero p {
+        max-width: 430px;
+
+        font-size: 14px;
+    }
+
+
+    /* PRODUTOS */
+
+    .products-section {
+        padding: 65px 16px;
+    }
+
+
+    /* TÍTULO */
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+        font-size: 27px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* GRID
+       Continua com 2 produtos por linha
+    */
+
+    .products-grid {
+        width: 100%;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        column-gap: 12px;
+
+        row-gap: 24px;
+    }
+
+
+    /* IMAGENS */
+
+    .product-image {
+        height: 205px;
+    }
+
+
+    /* INFORMAÇÕES */
+
+    .product-info {
+        padding: 15px;
+    }
+
+
+    /* NOME */
+
+    .product-name {
+        font-size: 14px;
+
+        letter-spacing: 0.5px;
+    }
+
+
+    /* DESCRIÇÃO */
+
+    .product-description {
+        min-height: 40px;
+
+        font-size: 11px;
+    }
+
+
+    /* PREÇO */
+
+    .price {
+        margin: 14px 0;
+
+        font-size: 17px;
+    }
+
+
+    /* BOTÃO */
+
+    .buy-button {
+        min-height: 42px;
+
+        padding: 10px 5px;
+
+        font-size: 10px;
+
+        letter-spacing: 0.5px;
+    }
+
+
+    /* UPLOAD */
+
+    .upload-section {
+        padding: 65px 16px;
+    }
+
+    .upload-section h2 {
+        font-size: 25px;
+
+        letter-spacing: 2px;
+    }
+
+    .upload-box {
+        padding: 45px 15px;
+    }
+}
+
+
+/* =========================================================
+   27. TELEMÓVEIS PEQUENOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 23px;
+
+        letter-spacing: 3px;
+    }
+
+    nav {
+        gap: 11px;
+    }
+
+    nav a {
+        font-size: 9px;
+    }
+
+
+    .hero {
+        min-height: 450px;
+
+        padding: 60px 16px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+
+    .products-section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .products-grid {
+        column-gap: 8px;
+
+        row-gap: 20px;
+    }
+
+
+    .product-image {
+        height: 175px;
+    }
+
+
+    .product-info {
+        padding: 11px;
+    }
+
+
+    .product-name {
+        font-size: 13px;
+    }
+
+
+    .product-description {
+        font-size: 10px;
+    }
+
+
+    .price {
+        font-size: 15px;
+    }
+
+
+    .buy-button {
+        min-height: 38px;
+
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   28. SEGURANÇA CONTRA SCROLL HORIZONTAL
+   ========================================================= */
+
+/*
+   Estes elementos não devem ultrapassar
+   a largura do ecrã.
+*/
+
+img,
+video,
+iframe,
+input,
+button {
+    max-width: 100%;
+}
+
+section,
+header,
+footer,
+.product,
+.product-image,
+.product-info {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   29. ACESSIBILIDADE
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid #ffffff;
+
+    outline-offset: 3px;
+}
