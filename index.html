@@ -1,0 +1,45 @@
+<!-- Secção Principal da Loja -->
+<main class="store-container">
+
+<!-- Título da Loja -->
+<header class="store-brand">
+<h1>Minha Loja Online</h1>
+<p>Os melhores produtos na ponta dos teus dedos</p>
+</header>
+
+<!-- Grelha de Produtos -->
+<section class="products-grid">
+
+<!-- Cartão do Produto 1 -->
+<article class="product-card">
+<img src="https://unsplash.com" alt="Produto 1" class="product-img">
+<div class="product-info">
+<h2 class="product-title">Relógio Elegante</h2>
+<p class="product-price">49,99 €</p>
+<button class="buy-btn" onclick="adicionarAoCarrinho('Relógio Elegante', 49.99)">Comprar</button>
+</div>
+</article>
+
+<!-- Cartão do Produto 2 -->
+<article class="product-card">
+<img src="https://unsplash.com" alt="Produto 2" class="product-img">
+<div class="product-info">
+<h2 class="product-title">Sapatilhas Desportivas</h2>
+<p class="product-price">89,99 €</p>
+<button class="buy-btn" onclick="adicionarAoCarrinho('Sapatilhas Desportivas', 89.99)">Comprar</button>
+</div>
+</article>
+
+</section>
+
+<!-- Carrinho de Compras Simples -->
+<aside class="cart-section">
+<h3>Carrinho</h3>
+<ul id="cart-items">
+<!-- Os produtos vão aparecer aqui via JavaScript -->
+</ul>
+<p class="cart-total">Total: <span id="total-price">0.00</span> €</p>
+</aside>
+
+</main>
+
